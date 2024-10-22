@@ -169,7 +169,7 @@ const Spotify = () => {
 
     return (
         <a style={{ textDecoration: 'none', color: 'black' }} href={playerState === 'PLAY' || playerState === 'PAUSE' ? nowPlaying.songUrl : ''}>
-            <div className="nowPlayingCard flex flex-row items-center bg-gray-100 py-2 px-5 rounded-lg shadow-lg max-w-[400px] mx-auto">
+            <div className="nowPlayingCard flex flex-row items-center bg-gray-100 py-2 px-5 rounded-lg shadow-lg max-w-[450px] mx-auto">
                 <div className="nowPlayingImage flex-shrink-0">
                     {playerState === 'PLAY' || playerState === 'PAUSE' ? <a href={nowPlaying.songUrl}><img className="w-[100px] h-[100px] rounded-md" src={albumImageUrl} alt="Album" /></a> : ''}
                 </div>
