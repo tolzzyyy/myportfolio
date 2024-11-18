@@ -8,11 +8,17 @@ import { FcAbout } from "react-icons/fc";
 import About from "./Components/About";
 import { AnimatePresence, motion } from "framer-motion";
 import Spotify from "./Components/Spotify";
+import ProjectPage from "./Components/ProjectPage";
 
 const App = () => {
   const location = useLocation();
   return (
-    <motion.div className="font-space-grotesk">
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.8, duration: 0.8 }}
+    className=" font-space-grotesk  "
+  >
       <TopNav />
       <AnimatePresence>
         <Routes location={location} key={location.key}>
@@ -21,9 +27,11 @@ const App = () => {
             <Route path="/sidequests" element={<SideQuest />} />
             <Route path="/about" element={<About />} />
             <Route path="/spotify" element={<Spotify/>}/>
+            {/* <Route path="/projects" element={<ProjectPage/>}/> */}
           </Route>
         </Routes>
       </AnimatePresence>
+      {/* <ProjectPage /> */}
     </motion.div>
   );
 };

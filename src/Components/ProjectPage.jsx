@@ -1,134 +1,196 @@
-import React from "react";
-import { motion } from "framer-motion";
-import brimble from "../Assets/Rectangle 10.png";
-import ebuka from "../Assets/Rectangle 8.png"; 
-import ebuka1 from "../Assets/Rectangle 9.png"; 
-import { fadeIn } from "./Variants"
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import rectangle from '../Assets/Rectangle 9.png'
+import rectangle1 from '../Assets/ArtRoost (1).png'
+import jobestate from '../Assets/JOBESTATE.png'
+import { BsArrow90DegRight, BsArrowUpRight } from 'react-icons/bs';
 
 const ProjectPage = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered1, setIsHovered1] = useState(false);
+  const [isHovered2, setIsHovered2] = useState(false);
+  const [isHovered3, setIsHovered3] = useState(false);
+  const [isHovered4, setIsHovered4] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1008);
+    };
+    
+    checkMobile();
+    setIsLoaded(true);
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const imageVariants = {
+    initial: {
+      scale: 1,
+      transition: { duration: 0 }
+    },
+    hidden: {
+      scale: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut"
+      }
+    },
+    visible: {
+      scale: [0, 1],
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <div className="py-[0px]">
-      <motion.div
-        variants={fadeIn("up", 0.5)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true, amount: 0.1 }}
-        className="flex flex-col py-[100px] w-full"
+    <div className="container flex mt-[70px] flex-col  md:gap-7 gap-10 mx-auto">
+      {/* Project 1 */}
+      <div
+        className="flex flex-col lg:flex-row group justify-between cursor-pointer items-center gap-[20px] lg:gap-[50px]"
+        onMouseEnter={() => !isMobile && setIsHovered(true)}
+        onMouseLeave={() => !isMobile && setIsHovered(false)}
       >
-        <h1>Missions</h1>
-
-        {/* Main Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-[70px] mt-[30px] md:mt-[80px]">
-          {/* Card 1 */}
+        {isMobile ? (
+          <div className="w-full">
+            <img 
+              src={jobestate}
+              alt="Project" 
+              className="w-full lg:w-[550px] h-auto object-cover"
+            />
+          </div>
+        ) : (
           <motion.div
-            variants={fadeIn("right", 0.1)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: true, amount: 0.3 }}
-            className="relative group"
+            className="w-full overflow-hidden"
+            variants={imageVariants}
+            initial="initial"
+            animate={isLoaded ? (isHovered ? "visible" : "hidden") : "initial"}
           >
-            <Link to="/bimble" className="relative block w-full">
-              <div className="relative">
-                <img src={ebuka1} className="w-full h-auto block" alt="" />
-                <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-[30px] backdrop-blur-[10px] transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                  <h2 className="md:text-[50px] text-[20px] text-black font-bold">
-                    Ebuka.design
-                  </h2>
-                </div>
-              </div>
-              <div className="flex flex-col mt-3">
-                <h1 className="transition-all duration-700 text-[13px] lg:text-[9px] xl:text-[21px] ease-in-out group-hover:text-blue-500">
-                  Brimble Public Beta
-                </h1>
-                <p className="text-[#737373] text-[9px] lg:text-[12px]">
-                  Identity and motion design
-                </p>
-              </div>
-            </Link>
+            <img 
+              src={jobestate}
+              alt="Project" 
+              className="w-full lg:w-[550px] h-auto object-cover"
+            />
           </motion.div>
-
-          {/* Card 2 */}
-          <motion.div
-            variants={fadeIn("left", 0.1)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: true, amount: 0.3 }}
-            className="relative group"
-          >
-            <div className="relative cursor-pointer block w-full">
-              <img src={ebuka} alt="Portfolio Preview" className="w-full h-auto block" />
-              <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-[30px] backdrop-blur-[5px] transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                <h2 className="md:text-[50px] text-[20px] text-black font-bold">
-                  Coming Soon
-                </h2>
-              </div>
-            </div>
-            <div className="flex flex-col mt-3">
-              <h1 className="transition-all duration-700 text-[13px] lg:text-[9px] xl:text-[21px] ease-in-out group-hover:text-blue-500">
-                Adetola - Portfolio
-              </h1>
-              <p className="text-[#737373] text-[9px] lg:text-[12px]">
-                UX and Product Design
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Duplicate of Card 1 */}
-          <motion.div
-            variants={fadeIn("right", 0.1)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: true, amount: 0.3 }}
-            className="relative group"
-          >
-            <Link to="/bimble" className="relative block w-full">
-              <div className="relative">
-                <img src={ebuka1} className="w-full h-auto block" alt="" />
-                <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-[30px] backdrop-blur-[10px] transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                  <h2 className="md:text-[50px] text-[20px] text-black font-bold">
-                    Ebuka.design
-                  </h2>
-                </div>
-              </div>
-              <div className="flex flex-col mt-3">
-                <h1 className="transition-all duration-700 text-[13px] lg:text-[9px] xl:text-[21px] ease-in-out group-hover:text-blue-500">
-                  Brimble Public Beta
-                </h1>
-                <p className="text-[#737373] text-[9px] lg:text-[12px]">
-                  Identity and motion design
-                </p>
-              </div>
-            </Link>
-          </motion.div>
-
-          {/* Duplicate of Card 2 */}
-          <motion.div
-            variants={fadeIn("left", 0.1)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: true, amount: 0.3 }}
-            className="relative group"
-          >
-            <div className="relative cursor-pointer block w-full">
-              <img src={ebuka} alt="Portfolio Preview" className="w-full h-auto block" />
-              <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-[30px] backdrop-blur-[5px] transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                <h2 className="md:text-[50px] text-[20px] text-black font-bold">
-                  Coming Soon
-                </h2>
-              </div>
-            </div>
-            <div className="flex flex-col mt-3">
-              <h1 className="transition-all duration-700 text-[13px] lg:text-[9px] xl:text-[21px] ease-in-out group-hover:text-blue-500">
-                Adetola - Portfolio
-              </h1>
-              <p className="text-[#737373] text-[9px] lg:text-[12px]">
-                UX and Product Design
-              </p>
-            </div>
-          </motion.div>
+        )}
+        <div className='w-full group-hover:text-black transition-all duration-500 flex text-[#808080] flex-col gap-1'>
+          <div className="text-[20px] md:text-[45px] border-b-[1px] lg:border-b-[2px] group-hover:border-black border-[#808080] py-2 md:py-4 flex items-center justify-between w-full font-medium">
+            <h1>JobeState</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
+          </div>
+          <p className="text-sm md:text-base">Front-end web development</p>
         </div>
-      </motion.div>
+      </div>
+
+      {/* Project 2 */}
+      <div
+        className="flex flex-col lg:flex-row group justify-between cursor-pointer items-center gap-[20px] lg:gap-[50px]"
+        onMouseEnter={() => !isMobile && setIsHovered2(true)}
+        onMouseLeave={() => !isMobile && setIsHovered2(false)}
+      >
+        {isMobile ? (
+          <div className="w-full">
+            <img 
+              src={rectangle1}
+              alt="Project" 
+              className="w-full lg:w-[550px]  object-cover"
+            />
+          </div>
+        ) : (
+          <motion.div
+            className="w-full overflow-hidden"
+            variants={imageVariants}
+            initial="initial"
+            animate={isLoaded ? (isHovered2 ? "visible" : "hidden") : "initial"}
+          >
+            <img 
+              src={rectangle1}
+              alt="Project" 
+              className="w-full lg:w-[550px] h-auto object-cover"
+            />
+          </motion.div>
+        )}
+        <div className='w-full group-hover:text-black transition-all duration-500 flex text-[#808080] flex-col gap-1'>
+          <div className="text-[20px] md:text-[45px] border-b-[1px] lg:border-b-[2px] group-hover:border-black border-[#808080] py-2 md:py-4 flex items-center justify-between w-full font-medium">
+            <h1>ArtRoost</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
+          </div>
+          <p className="text-sm md:text-base">Front-end web development</p>
+        </div>
+      </div>
+
+      {/* Project 3 */}
+      <div
+        className="flex flex-col lg:flex-row group justify-between cursor-pointer items-center gap-[20px] lg:gap-[50px]"
+        onMouseEnter={() => !isMobile && setIsHovered3(true)}
+        onMouseLeave={() => !isMobile && setIsHovered3(false)}
+      >
+        {isMobile ? (
+          <div className="w-full">
+            <img 
+              src={rectangle}
+              alt="Project" 
+              className="w-full lg:w-[500px] h-auto object-cover"
+            />
+          </div>
+        ) : (
+          <motion.div
+            className="w-full overflow-hidden"
+            variants={imageVariants}
+            initial="initial"
+            animate={isLoaded ? (isHovered3 ? "visible" : "hidden") : "initial"}
+          >
+            <img 
+              src={rectangle}
+              alt="Project" 
+              className="w-full lg:w-[500px] h-auto object-cover"
+            />
+          </motion.div>
+        )}
+        <div className='w-full group-hover:text-black transition-all duration-500 flex text-[#808080] flex-col gap-1'>
+          <div className="text-[20px] md:text-[45px] border-b-[1px] lg:border-b-[2px] group-hover:border-black border-[#808080] py-2 md:py-4 flex items-center justify-between w-full font-medium">
+            <h1>Kept Journal</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
+          </div>
+          <p className="text-sm md:text-base">Front-end web development</p>
+        </div>
+      </div>
+
+      {/* Project 4 */}
+      <div
+        className="flex flex-col lg:flex-row group justify-between cursor-pointer items-center gap-[20px] lg:gap-[50px]"
+        onMouseEnter={() => !isMobile && setIsHovered4(true)}
+        onMouseLeave={() => !isMobile && setIsHovered4(false)}
+      >
+        {isMobile ? (
+          <div className="w-full">
+            <img 
+              src={rectangle}
+              alt="Project" 
+              className="w-full lg:w-[500px] h-auto object-cover"
+            />
+          </div>
+        ) : (
+          <motion.div
+            className="w-full overflow-hidden"
+            variants={imageVariants}
+            initial="initial"
+            animate={isLoaded ? (isHovered4 ? "visible" : "hidden") : "initial"}
+          >
+            <img 
+              src={rectangle}
+              alt="Project" 
+              className="w-full lg:w-[500px] h-auto object-cover"
+            />
+          </motion.div>
+        )}
+        <div className='w-full group-hover:text-black transition-all duration-500 flex text-[#808080] flex-col gap-1'>
+          <div className="text-[20px] md:text-[45px] border-b-[1px] lg:border-b-[2px] group-hover:border-black border-[#808080] py-2 md:py-4 flex items-center justify-between w-full font-medium">
+            <h1>Kept Journal</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
+          </div>
+          <p className="text-sm md:text-base">Front-end web development</p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -5,18 +5,17 @@ const SideQuest = () => {
 
   const Sidevariants = {
     hidden:{
-      opacity:1,
-      
+      opacity:0,
+
     },
     visible:{
       opacity:1,
-    
       transition:{delay:0.8, duration:0.8}
     },
     exit:{
+    
       opacity:0,
-      
-      transition:{ease:'easeInOut'}
+      transition:{ease:'easeInOut', delay:0.2, duration:0.2}
     }
   }
   return (
@@ -25,7 +24,7 @@ const SideQuest = () => {
     className='py-6 px-[80px]'
     exit='exit'
     >
-      <motion.h1  variants={fadeIn("up", 0.5)}
+      <motion.h1  variants={fadeIn("up", 0.8)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true, amount: 0.7 }}>

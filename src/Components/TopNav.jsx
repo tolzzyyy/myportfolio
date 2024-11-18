@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const TopNav = () => {
   return (
-    <div className="max-w-[1680px] mx-auto h-full py-4 px-10">
+    <div className="max-w-[1680px] mx-auto h-full py-4 px-8 md:px-[80px]">
       <motion.nav
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -20,7 +20,7 @@ const TopNav = () => {
             <p className="text-[14px] font-thin">Frontend Engineer</p>
           </div>
         </div>
-        <div>
+        <div className="hidden md:flex">
           <ul className="text-[14px] font-medium flex gap-7">
             <NavLink
               to="/"
