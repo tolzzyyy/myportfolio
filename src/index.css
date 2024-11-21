@@ -15,40 +15,40 @@
 
 
 
-@keyframes marquee {
+/* @keyframes marquee {
   0% {
-    transform: translateX(100%); /* Start at the right */
+    transform: translateX(100%); 
   }
   100% {
-    transform: translateX(-100%); /* Move to the left */
+    transform: translateX(-100%); 
   }
 }
 
 .marquee-container {
   display: inline-block;
   position: relative;
-  white-space: nowrap; /* Prevents the text from wrapping */
-  overflow: hidden; /* Hides the text overflow */
+  white-space: nowrap; 
+  overflow: hidden; 
   width: 100px;
 }
 
 .marquee-container::after {
-  content: ''; /* To hide the overflow smoothly */
+  content: ''; 
   position: absolute;
   top: 0;
   right: 0;
-  width: 10px; /* Adjust width for fade-out */
+  width: 10px; 
   height: 100%;
-  background: linear-gradient(to right, transparent, white); /* Gradient to fade out the text */
+  background: linear-gradient(to right, transparent, white); 
 }
 
 .marquee-container > * {
   display: inline-block;
-  animation: marquee 7s linear infinite; /* Adjust the duration as needed */
+  animation: marquee 7s linear infinite; 
 }
 
 .truncate {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Shortens long text with an ellipsis */
-}
+  text-overflow: ellipsis; 
+} */

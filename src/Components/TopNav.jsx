@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FaSpotify } from "react-icons/fa6";
 import memoji from "../Assets/Memoji.png";
 import { motion } from "framer-motion";
+import Spotify from "./Spotify";
 
 const TopNav = () => {
   return (
@@ -20,8 +21,8 @@ const TopNav = () => {
             <p className="text-[14px] font-thin">Frontend Engineer</p>
           </div>
         </div>
-        <div className="hidden md:flex">
-          <ul className="text-[14px] font-medium flex gap-7">
+        <div className="hidden md:flex items-center">
+          <ul className="text-[14px] font-medium flex items-center gap-7">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -54,7 +55,7 @@ const TopNav = () => {
             </NavLink>
             <li className="flex items-center text-[#929191] gap-[2px]">
               {" "}
-              <FaSpotify className="text-green-400" size={20} /> Spotify?
+              <FaSpotify className="text-green-400" size={20} /> <Spotify/>
             </li>
           </ul>
         </div>

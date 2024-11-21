@@ -1,7 +1,7 @@
-import React from "react"; 
-import { motion } from "framer-motion"; 
-import { fadeIn } from "./Variants"; 
-import omo from "../Assets/JOBESTATE.png"; 
+import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "./Variants";
+import omo from "../Assets/JOBESTATE.png";
 
 const About = () => {
   const Sidevariants = {
@@ -27,7 +27,7 @@ const About = () => {
       className="py-6 flex w-full items-center flex-col px-5 md:px-[70px]"
       exit="exit"
     >
-      <div className="flex items-center justify-end">
+      <div className="flex xl:h-[220px] items-center justify-end">
         <motion.h1
           variants={fadeIn("up", 0.5)}
           className="w-full text-[20px] md:tracking-[0px] md:text-[37px] font-[400] "
@@ -35,14 +35,15 @@ const About = () => {
           whileInView={"show"}
           viewport={{ once: true, amount: 0.2 }}
         >
-          Hey there, i'm Adetola, 👋🏽  a frontend engineer who really loves 
-          building cool responsive website designs, frontend/backend infrastructures with    {"/and "}
-           <span className="">Web Apps. </span>
+          Hey there, i'm Adetola, 👋🏽 a frontend engineer who really loves
+          building cool responsive website designs, frontend/backend
+          infrastructures with {"/and "}
+          <span className="">Web Apps. </span>
         </motion.h1>
       </div>
 
       <div className="flex flex-col-reverse md:flex-row w-full h-full justify-end">
-        <div className="w-full mt-[60px] h-full flex flex-col-reverse lg:flex-row gap-10 justify-between">
+        <div className="w-full mt-[70px] h-full flex flex-col-reverse lg:flex-row gap-10 justify-between">
           <div className="h-full flex flex-col justify-between">
             <div>
               <h1 className="text-[21px] font-[400]">tools i work with</h1>
@@ -80,7 +81,11 @@ const About = () => {
           </div>
 
           <div>
-            <img src={omo} className="h-full object-cover w-full lg:w-[500px]" alt="" />
+            <img
+              src={omo}
+              className="h-full object-cover w-full lg:w-[500px]"
+              alt=""
+            />
           </div>
         </div>
       </div>
