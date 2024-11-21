@@ -12,15 +12,15 @@ const Hero = () => {
   const Herovariant = {
     hidden: {
       opacity: 0,
-      transition: { delay: 0.2, duration: 0.2 },
+      transition: { delay: 0.6, duration: 0.6 },
     },
     visible: {
       opacity: 1,
-      transition: { delay: 0.8, duration: 0.8 },
+      transition: { delay: 0.9, duration: 0.9 },
     },
     exit: {
       opacity: 0,
-      transition: { ease: "easeInOut", delay: 0.8, duration: 0.8 },
+      transition: { ease: "easeInOut", delay: 0.5, duration: 0.5 },
     },
   };
   useEffect(() => {

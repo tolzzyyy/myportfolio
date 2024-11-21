@@ -8,6 +8,7 @@ module.exports = {
       'space-grotesk': ['"Space Grotesk"', 'sans-serif'],
     },
     fontWeight: {
+      thin:300,
       normal: 400,
       bold: 700,
     }},
