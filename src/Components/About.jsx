@@ -40,7 +40,9 @@ const About = () => {
             </div>
             <div className="mt-5">
               <button className=" w-full md:w-[140px] h-[50px] border-2 border-black">
+                <a href="https://docs.google.com/document/d/1bpFXeXAozMuZ04Lm6LvxoNgvVP0CFQZvOrl9rh1vQZs/preview">
                 My resume
+                </a>
               </button>
             </div>
           </div>
@@ -57,7 +59,9 @@ const About = () => {
             </div>
             <div className="mt-5">
               <button className=" w-full lg:absolute md:bottom-0 md:w-[140px] h-[50px] border-2 border-black">
+                <a href="mailto:williamsegberongbe@gmail.com">
                Get in Touch
+               </a>
               </button>
             </div>
           </div>

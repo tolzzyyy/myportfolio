@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import rectangle from '../Assets/EBUKA.png'
+import rectangle from '../Assets/EBUKA (1).png'
 import rectangle1 from '../Assets/ARTROOST.png'
 import breeza from '../Assets/BREEZA.png'
 import cover from '../Assets/BINWISE.png'
