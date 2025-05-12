@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import rectangle from '../Assets/Rectangle 9.png'
-import rectangle1 from '../Assets/ArtRoost (1).png'
+import rectangle from '../Assets/EBUKA.png'
+import rectangle1 from '../Assets/ARTROOST.png'
+import breeza from '../Assets/BREEZA.png'
+import cover from '../Assets/BINWISE.png'
 import jobestate from '../Assets/JOBESTATE.png'
 import { BsArrow90DegRight, BsArrowUpRight } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const ProjectPage = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -49,7 +52,8 @@ const ProjectPage = () => {
   return (
     <div className="container flex mt-[70px] flex-col  md:gap-7 gap-10 mx-auto">
       {/* Project 1 */}
-      <div
+      <a
+      href='https://labreeza.com/'
         className="flex flex-col lg:flex-row group justify-between cursor-pointer items-center gap-[20px] lg:gap-[50px]"
         onMouseEnter={() => !isMobile && setIsHovered(true)}
         onMouseLeave={() => !isMobile && setIsHovered(false)}
@@ -57,7 +61,7 @@ const ProjectPage = () => {
         {isMobile ? (
           <div className="w-full">
             <img 
-              src={jobestate}
+              src={breeza}
               alt="Project" 
               className="w-full lg:w-[550px] h-auto object-cover"
             />
@@ -70,22 +74,23 @@ const ProjectPage = () => {
             animate={isLoaded ? (isHovered ? "visible" : "hidden") : "initial"}
           >
             <img 
-              src={jobestate}
+              src={breeza}
               alt="Project" 
-              className="w-full lg:w-[550px] h-auto object-cover"
+              className="w-full lg:w-[550px] h-auto "
             />
           </motion.div>
         )}
         <div className='w-full group-hover:text-black transition-all duration-500 flex text-[#808080] flex-col gap-1'>
           <div className="text-[20px] md:text-[45px] border-b-[1px] lg:border-b-[2px] group-hover:border-black border-[#808080] py-2 md:py-4 flex items-center justify-between w-full font-medium">
-            <h1>JobeState</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
+            <h1>Breeza</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
           </div>
           <p className="text-sm md:text-base">Front-end web development</p>
         </div>
-      </div>
+      </a>
 
       {/* Project 2 */}
-      <div
+      <a
+      href='https://bin-wise-kappa.vercel.app/'
         className="flex flex-col lg:flex-row group justify-between cursor-pointer items-center gap-[20px] lg:gap-[50px]"
         onMouseEnter={() => !isMobile && setIsHovered2(true)}
         onMouseLeave={() => !isMobile && setIsHovered2(false)}
@@ -93,7 +98,7 @@ const ProjectPage = () => {
         {isMobile ? (
           <div className="w-full">
             <img 
-              src={rectangle1}
+              src={cover}
               alt="Project" 
               className="w-full lg:w-[550px]  object-cover"
             />
@@ -106,7 +111,7 @@ const ProjectPage = () => {
             animate={isLoaded ? (isHovered2 ? "visible" : "hidden") : "initial"}
           >
             <img 
-              src={rectangle1}
+              src={cover}
               alt="Project" 
               className="w-full lg:w-[550px] h-auto object-cover"
             />
@@ -114,14 +119,15 @@ const ProjectPage = () => {
         )}
         <div className='w-full group-hover:text-black transition-all duration-500 flex text-[#808080] flex-col gap-1'>
           <div className="text-[20px] md:text-[45px] border-b-[1px] lg:border-b-[2px] group-hover:border-black border-[#808080] py-2 md:py-4 flex items-center justify-between w-full font-medium">
-            <h1>ArtRoost</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
+            <h1>BinWise</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
           </div>
           <p className="text-sm md:text-base">Front-end web development</p>
         </div>
-      </div>
+      </a>
 
       {/* Project 3 */}
-      <div
+      <a
+      href='https://eburogers.vercel.app/'
         className="flex flex-col lg:flex-row group justify-between cursor-pointer items-center gap-[20px] lg:gap-[50px]"
         onMouseEnter={() => !isMobile && setIsHovered3(true)}
         onMouseLeave={() => !isMobile && setIsHovered3(false)}
@@ -150,11 +156,11 @@ const ProjectPage = () => {
         )}
         <div className='w-full group-hover:text-black transition-all duration-500 flex text-[#808080] flex-col gap-1'>
           <div className="text-[20px] md:text-[45px] border-b-[1px] lg:border-b-[2px] group-hover:border-black border-[#808080] py-2 md:py-4 flex items-center justify-between w-full font-medium">
-            <h1>Kept Journal</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
+            <h1>Ebuka's Portfolio</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
           </div>
           <p className="text-sm md:text-base">Front-end web development</p>
         </div>
-      </div>
+      </a>
 
       {/* Project 4 */}
       <div
@@ -165,7 +171,7 @@ const ProjectPage = () => {
         {isMobile ? (
           <div className="w-full">
             <img 
-              src={rectangle}
+              src={rectangle1}
               alt="Project" 
               className="w-full lg:w-[500px] h-auto object-cover"
             />
@@ -178,7 +184,7 @@ const ProjectPage = () => {
             animate={isLoaded ? (isHovered4 ? "visible" : "hidden") : "initial"}
           >
             <img 
-              src={rectangle}
+              src={rectangle1}
               alt="Project" 
               className="w-full lg:w-[500px] h-auto object-cover"
             />
@@ -186,11 +192,14 @@ const ProjectPage = () => {
         )}
         <div className='w-full group-hover:text-black transition-all duration-500 flex text-[#808080] flex-col gap-1'>
           <div className="text-[20px] md:text-[45px] border-b-[1px] lg:border-b-[2px] group-hover:border-black border-[#808080] py-2 md:py-4 flex items-center justify-between w-full font-medium">
-            <h1>Kept Journal</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
+            <h1>Art Roost</h1> <BsArrowUpRight className='hidden lg:flex'/> <p className='flex lg:hidden'>2024</p>
           </div>
           <p className="text-sm md:text-base">Front-end web development</p>
         </div>
       </div>
+      <h1 className="md:text-[70px] pt-[50px] w-full text-center text-[20px] py-4 ">
+          Build the world with <span className="font-serif">intention</span>{" "}
+        </h1>
     </div>
   );
 };

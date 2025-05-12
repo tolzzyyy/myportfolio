@@ -2,47 +2,29 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "./Variants";
 import omo from "../Assets/JOBESTATE.png";
+import Footer from "./Footer";
 
 const About = () => {
-  const Sidevariants = {
-    hidden: {
-      opacity: 0,
-      transition: { delay: 0.9, duration: 0.9 },
-    },
-    visible: {
-      opacity: 1,
-      transition: { delay: 1.2, duration: 1.2 },
-    },
-    exit: {
-      opacity: 0,
-      transition: { ease: "easeInOut", delay: 0.5, duration: 0.5 },
-    },
-  };
-
+  
   return (
-    <motion.div
-      variants={Sidevariants}
-      initial="hidden"
-      animate="visible"
-      className="py-6 flex w-full items-center flex-col px-5 md:px-[70px]"
-      exit="exit"
+    <div
+    
+      className="py-6  flex w-full max-w-[1680px] mx-auto  items-center flex-col px-8 md:px-[80px]"
+    
     >
-      <div className="flex xl:h-[220px] items-center justify-end">
-        <motion.h1
-          variants={fadeIn("up", 0.5)}
+      <div className="flex  xl:h-[220px] items-center justify-end">
+        <h1
+     
           className="w-full text-[20px] md:tracking-[0px] md:text-[37px] font-[400] "
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 0.2 }}
         >
           Hey there, i'm Adetola, 👋🏽 a frontend engineer who really loves
           building cool responsive website designs, frontend/backend
           infrastructures with {"/and "}
           <span className="">Web Apps. </span>
-        </motion.h1>
+        </h1>
       </div>
 
-      <div className="flex flex-col-reverse md:flex-row w-full h-full justify-end">
+      <div className="flex mb-[40px] flex-col-reverse md:flex-row w-full h-full justify-end">
         <div className="w-full mt-[70px] h-full flex flex-col-reverse lg:flex-row gap-10 justify-between">
           <div className="h-full flex flex-col justify-between">
             <div>
@@ -75,7 +57,7 @@ const About = () => {
             </div>
             <div className="mt-5">
               <button className=" w-full lg:absolute md:bottom-0 md:w-[140px] h-[50px] border-2 border-black">
-                My resume
+               Get in Touch
               </button>
             </div>
           </div>
@@ -89,7 +71,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+      <Footer/>
+    </div>
   );
 };
 

@@ -2,13 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="mt-10">
+    <div className="md:mt-10 w-full">
       <div className="flex flex-col gap-4 items-center justify-center">
-        <h1 className="md:text-[70px] w-full text-center text-[20px] py-4 border-b-[2px] border-black border-dashed">
-          Build the world with <span className="font-serif">intention</span>{" "}
-        </h1>
-        <div>
-          <h1 className="py-1">Built with 💙 by Ebuka + Tola © 2024 </h1>
+        
+        <div className="border-t-[2px] py-3 w-full border-black border-dashed">
+          <h1 className="py-1 text-center">Built with 💙 by Ebuka + Tola © 2024 </h1>
           <div className="flex justify-center py-1 gap-4 items-center">
            <a href="">TW</a>
            <a href="">GH</a>

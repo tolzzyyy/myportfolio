@@ -9,6 +9,7 @@ import About from "./Components/About";
 import { AnimatePresence, motion } from "framer-motion";
 import Spotify from "./Components/Spotify";
 import ProjectPage from "./Components/ProjectPage";
+import MotionWrapper from "./Components/MotionWrapper";
 
 const App = () => {
   const location = useLocation();
@@ -17,15 +18,15 @@ const App = () => {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ delay: 0.8, duration: 0.8 }}
-    className=" font-space-grotesk  "
+    className=" font-space-grotesk   "
   >
       <TopNav />
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Hero />} />
-            <Route path="/sidequests" element={<SideQuest />} />
-            <Route path="/about" element={<About />} />
+            <Route index element={<MotionWrapper><Hero /></MotionWrapper>} />
+            <Route path="/sidequests" element={<MotionWrapper><SideQuest /></MotionWrapper>} />
+            <Route path="/about" element={<MotionWrapper><About /></MotionWrapper>} />
             <Route path="/spotify" element={<Spotify/>}/>
             {/* <Route path="/projects" element={<ProjectPage/>}/> */}
           </Route>

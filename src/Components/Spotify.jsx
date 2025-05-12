@@ -5,6 +5,7 @@ import { AiOutlinePauseCircle } from "react-icons/ai";
 import { BiErrorCircle } from "react-icons/bi";
 import { HiOutlineStatusOffline } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { FaSpotify } from "react-icons/fa";
 
 // Spotify API and Endpoints
 const NOW_PLAYING_ENDPOINT =
@@ -169,9 +170,9 @@ const Spotify = () => {
     playerState = "OFFLINE";
     title = "Not Playing";
     // artist = 'currently Offline';
-  } else {
-    title = "";
-    artist = "";
+  } else { 
+    title = "Spotify?"
+    artist = ""
   }
 
   const pad = (n) => {
@@ -180,13 +181,15 @@ const Spotify = () => {
 
   return (
     <a
-      style={{ textDecoration: "none", color: "black" }}
+      style={{ textDecoration: "none", color: "black",   }}
       href={
         playerState === "PLAY" || playerState === "PAUSE"
           ? nowPlaying.songUrl
           : ""
       }
+      className="flex text-[14px] items-center"
     >
+        <FaSpotify className="text-green-300"  size={20}/>
       <div className="flex ml-[6px] gap-[5px] items-center">
         <div className="nowPlayingImage ">
           {playerState === "PLAY" || playerState === "PAUSE" ? (
@@ -215,7 +218,7 @@ const Spotify = () => {
                 {title}
               </a>
             ) : (
-              title
+              <p className=" font-[400] text-[12px] md:text-[14px]">{title}</p>
             )}
           </div>
           <div className="nowPlayingArtist text-[6px]   text-gray-600">
